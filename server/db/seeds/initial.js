@@ -19,7 +19,7 @@ exports.seed = async (knex) => {
     const user = {
       email: 'test@test.com',
       name: 'Bobo',
-      password: 'test' //todo: store hashed passwords
+      password: 'test' // TODO: store hashed passwords
     }
     const [userCreated] = await knex(tableNames.user).insert(user).returning('*');
     console.log(userCreated);

@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const compression = require('compression');
 const helmet = require('helmet');
 const middlewares = require('./middlewares');
-
+const api = require('./api')
 
 const app = express();
 
@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
         message: '🌍 Hello World 🌍',
     });
 });
+
+app.use('/api/v1', api);
+
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);

@@ -1,7 +1,6 @@
 const supertest = require('supertest');
 
 const app = require('./app');
-const { item } = require('../constants/tableNames');
 
 describe('GET /', () => {
     it('should respond with a message', async () => {
